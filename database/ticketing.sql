@@ -125,8 +125,8 @@ CREATE TABLE `hd_users` (
 --
 
 INSERT INTO `hd_users` (`id`, `email`, `password`, `create_date`, `name`, `user_type`, `status`) VALUES
-(1, 'admin@webdamn.com', '202cb962ac59075b964b07152d234b70', '2021-10-25 23:24:33', 'Kane Wiliam ', 'admin', 1),
-(2, 'smith@webdamn.com', '202cb962ac59075b964b07152d234b70', '2021-10-25 23:24:46', 'Jhon Smith', 'user', 1);
+(1, 'admin@ticketing.com', '202cb962ac59075b964b07152d234b70', '2021-10-25 23:24:33', 'Kane Wiliam ', 'admin', 1),
+(2, 'smith@ticketing.com', '202cb962ac59075b964b07152d234b70', '2021-10-25 23:24:46', 'Jhon Smith', 'user', 1);
 
 --
 -- Indexes for dumped tables
