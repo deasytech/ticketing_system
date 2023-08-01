@@ -14,15 +14,21 @@ class Mail
     private $smtp_password;
     private $from_email;
     private $from_name;
+    private $admin1_email;
+    private $admin2_email;
     private $mail;
+    private $env;
 
     public function __construct()
     {
-        $this->smtp_host = "smtp.gmail.com";
-        $this->smtp_email = "deasytechsolutions@gmail.com";
-        $this->smtp_password = "pbavuenaysuwthuu"; //"bnbsewxmoxjbddoh";
-        $this->from_email = "connectnigeria@gmail.com";
-        $this->from_name = "CN Ticketing System";
+        $this->env = parse_ini_file('.env');
+        $this->smtp_host = $this->env["SMTP_HOST"];
+        $this->smtp_email = $this->env["SMTP_EMAIL"];
+        $this->smtp_password = $this->env["SMTP_PASSWORD"];
+        $this->from_email = $this->env["FROM_EMAIL"];
+        $this->from_name = $this->env["FROM_NAME"];
+        $this->admin1_email = $this->env["ADMIN1_EMAIL"];
+        $this->admin2_email = $this->env["ADMIN2_EMAIL"];
         
         $this->mail = new PHPMailer(true);
 
@@ -50,8 +56,8 @@ class Mail
         try {
             // Send message to admins
             $this->mail->setFrom($this->from_email, $this->from_name);
-            $this->mail->addAddress('zacheocreative@gmail.com');
-            $this->mail->addBCC('dumebi@platformng.com');
+            $this->mail->addAddress($this->admin1_email);
+            $this->mail->addBCC($this->admin2_email);
 
             $this->mail->isHTML(true);
             $this->mail->Subject = $message["subject"];
@@ -83,8 +89,8 @@ class Mail
             // Send message to admins
             $this->mail->setFrom($this->from_email, $this->from_name);
             $this->mail->addAddress($email, $name);
-            $this->mail->addAddress('zacheocreative@gmail.com');
-            $this->mail->addBCC('dumebi@platformng.com');
+            $this->mail->addAddress($this->admin1_email);
+            $this->mail->addBCC($this->admin2_email);
 
             $this->mail->isHTML(true);
             $this->mail->Subject = $message["subject"];
