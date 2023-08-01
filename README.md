@@ -1,9 +1,9 @@
 # Ticketing System built with PHP/MySQL
 
 
-![alt tag](https://github.com/deasytech/ticketing_system/images/login-screen.png)
+![login screen](https://github.com/deasytech/ticketing_system/blob/main/images/login-screen.png)
 
-![alt tag](https://github.com/deasytech/ticketing_system/images/ticketing-screen.png)
+![ticketing screen](https://github.com/deasytech/ticketing_system/blob/main/images/ticketing-screen.png)
 
 ### Installation
 `git clone https://github.com/deasytech/ticketing_system.git`
